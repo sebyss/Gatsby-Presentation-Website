@@ -1,7 +1,7 @@
 {
   "homepage": "https://sebyss.github.io/Gatsby-Presentation-Website",
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "Dragan-auto",
+  "description": "Dragan-auto",
   "version": "1.0.0",
   "author": "Hunter Chang",
   "dependencies": {
@@ -25,7 +25,7 @@
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
