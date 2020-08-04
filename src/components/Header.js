@@ -5,49 +5,49 @@ import logoImg from '../images/AutoDragan-Final.png'
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
-      <span >
-        <img src={logoImg} alt="" style={{width: "100%", height: "100%", paddingTop: "10px"}}/>
+      <span>
+        <img
+          src={logoImg}
+          alt=""
+          style={{ width: '100%', height: '100%', paddingTop: '10px' }}
+        />
       </span>
     </div>
     <div className="content">
       <div className="inner">
-        <h1>ȘCOALA AUTO DRĂGAN</h1>
+        <h1>AUTO DRĂGAN</h1>
         <p>
-          A fully responsive site template designed by{' '}
-          <a href="https://html5up.net">HTML5 UP</a> and released
-          <br />
-          for free under the{' '}
-          <a href="https://html5up.net/license">Creative Commons</a> license.
+        Cursuri în vederea obținerii permisului de conducere pentru categoria B.
         </p>
       </div>
     </div>
     <nav>
-      <ul>
+      <ul style={{paddingRight: "6px"}}>
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('intro')
+              props.onOpenArticle('servicii')
             }}
           >
-            Intro
+            Servicii
           </button>
         </li>
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('work')
+              props.onOpenArticle('inscriere')
             }}
           >
-            Work
+            Înscrieri
           </button>
         </li>
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('about')
+              props.onOpenArticle('tarife')
             }}
           >
-            About
+            Tarife
           </button>
         </li>
         <li>

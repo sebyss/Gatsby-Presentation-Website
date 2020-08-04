@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
+import servicii from '../images/servicii.jpg'
+import dosar from '../images/dosar.jpg'
+import tarife from '../images/tarife.jpg'
 
 class Main extends React.Component {
   render() {
@@ -22,88 +22,113 @@ class Main extends React.Component {
         style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
       >
         <article
-          id="intro"
-          className={`${this.props.article === 'intro' ? 'active' : ''} ${
+          id="servicii"
+          className={`${this.props.article === 'servicii' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Intro</h2>
+          <h2 className="major">servicii</h2>
           <span className="image main">
-            <img src={pic01} alt="" />
+            <img src={servicii} alt="" />
           </span>
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
+            Şcoala noastră vă oferă servicii de cea mai bună calitate, cu
+            personal de înaltă pregătire profesională şi probitate morală, în
+            vederea obţinerii permisului de conducere pentru categoria B.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-            lectus. Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. In non lorem sit amet elit
-            placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.
-          </p>
+
+          <div className="icons">
+            <a className="icon fa-credit-card">
+              <span className="label">Card</span>
+              <p>
+                Plata în rate a cursului și reducerile substanțiale la
+                întocmirea fișei medicale și a avizului psihologic sunt doar
+                câteva dintre avantaje.
+              </p>
+            </a>
+          </div>
+
+          <div className="icons">
+            <a className="icon fa-check-circle">
+              <span className="label">Check</span>
+              <p>
+                Cu o rată de promovabilitate de peste 90%, școala noastră este
+                drumul cel mai sigur de la cursant la șofer !
+              </p>
+            </a>
+          </div>
+
+          <div className="icons">
+            <a className="icon fa-clipboard">
+              <span className="label">Board</span>
+              <p>Sală pentru susținerea orelor de legislație.</p>
+            </a>
+          </div>
+
+          <div className="icons">
+            <a className="icon fa-flag">
+              <span className="label">Crown</span>
+              <p>Promptitudine și seriozitate.</p>
+            </a>
+          </div>
+
           {close}
         </article>
 
         <article
-          id="work"
-          className={`${this.props.article === 'work' ? 'active' : ''} ${
+          id="inscriere"
+          className={`${this.props.article === 'inscriere' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Work</h2>
+          <h2 className="major">Înscriere</h2>
           <span className="image main">
-            <img src={pic02} alt="" />
+            <img src={dosar} alt="" />
           </span>
+          <p>Actele necesare întocmirii dosarului sunt:</p>
+          <ul>
+            <li>Carte de identitate</li>
+            <li>Cazier judiciar</li>
+          </ul>
           <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
+            Pentru a veni în ajutorul viitorilor cursanți, fișa medicală și
+            avizul psihologic vor fi făcute la o clinică medicală privată unde
+            școala are contract de colaborare și cu o reducere substanțială .
           </p>
-          <p>
-            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-            Pellentesque condimentum sem. In efficitur ligula tate urna.
-            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
-            tempus.
-          </p>
+
+          <p>Pentru înscrieri vizitați secțiunea Contact.</p>
           {close}
         </article>
 
         <article
-          id="about"
-          className={`${this.props.article === 'about' ? 'active' : ''} ${
+          id="tarife"
+          className={`${this.props.article === 'tarife' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">About</h2>
+          <h2 className="major">Tarife</h2>
           <span className="image main">
-            <img src={pic03} alt="" />
+            <img src={tarife} alt="" />
           </span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
+            Prețul cursului este de 1650 lei, plătibili în 2 rate, prima rată se
+            achită la înscriere iar a doua la începerea modulului de pregătire
+            practică.
           </p>
+
+          <p>Prețul școlii de șoferi include:</p>
+          <ul>
+            <li>Legislație rutieră - 24 de ore didactice</li>
+            <li>
+              Practică în conducerea autovehiculului - 30 de ore didactice
+            </li>
+            <li>Carburantul necesar orelor de conducere</li>
+            <li>Întocmirea dosarului</li>
+            <li>Programarea la ghișeul DRPCIV pentru examenul teoretic</li>
+          </ul>
           {close}
         </article>
 
@@ -117,20 +142,26 @@ class Main extends React.Component {
           <h2 className="major">Contact</h2>
           <form method="post" action="#">
             <div className="field half first">
-              <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <label htmlFor="name">Nume</label>
+              <input type="text" name="name" id="name" required minLength="3" />
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+              <input type="email" name="email" id="email" required />
             </div>
             <div className="field">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <label htmlFor="message">Mesaj</label>
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                required
+                minLength="8"
+              ></textarea>
             </div>
             <ul className="actions">
               <li>
-                <input type="submit" value="Send Message" className="special" />
+                <input type="submit" value="Trimite" className="special" />
               </li>
               <li>
                 <input type="reset" value="Reset" />
@@ -140,28 +171,18 @@ class Main extends React.Component {
           <ul className="icons">
             <li>
               <a
-                href="https://twitter.com/HuntaroSan"
-                className="icon fa-twitter"
+                href="https://www.facebook.com/dprauto.dragan"
+                className="icon fa-facebook"
               >
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://codebushi.com" className="icon fa-facebook">
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com" className="icon fa-instagram">
-                <span className="label">Instagram</span>
-              </a>
-            </li>
-            <li>
               <a
-                href="https://github.com/codebushi/gatsby-starter-dimension"
-                className="icon fa-github"
+                href="https://www.instagram.com/autodragan/"
+                className="icon fa-instagram"
               >
-                <span className="label">GitHub</span>
+                <span className="label">Instagram</span>
               </a>
             </li>
           </ul>
