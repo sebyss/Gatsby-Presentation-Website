@@ -17,14 +17,18 @@ const Header = props => (
       <div className="inner">
         <h1>AUTO DRĂGAN</h1>
         <p>
-        Cursuri în vederea obținerii permisului de conducere pentru categoria B.
+          Cursuri în vederea obținerii permisului de conducere pentru categoria
+          B.
         </p>
       </div>
     </div>
     <nav>
-      <ul style={{paddingRight: "6px"}}>
+      <ul style={{ marginRight: '6px' }}>
         <li>
           <button
+            style={{
+              width: '100%',
+            }}
             onClick={() => {
               props.onOpenArticle('servicii')
             }}
@@ -34,6 +38,9 @@ const Header = props => (
         </li>
         <li>
           <button
+            style={{
+              width: '100%',
+            }}
             onClick={() => {
               props.onOpenArticle('inscriere')
             }}
@@ -43,6 +50,9 @@ const Header = props => (
         </li>
         <li>
           <button
+            style={{
+              width: '100%',
+            }}
             onClick={() => {
               props.onOpenArticle('tarife')
             }}
@@ -52,6 +62,9 @@ const Header = props => (
         </li>
         <li>
           <button
+            style={{
+              width: '100%',
+            }}
             onClick={() => {
               props.onOpenArticle('contact')
             }}
