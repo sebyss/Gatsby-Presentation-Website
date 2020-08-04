@@ -4,8 +4,80 @@ import servicii from '../images/servicii.jpg'
 import dosar from '../images/dosar.jpg'
 import tarife from '../images/tarife.jpg'
 
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+)
+const validateForm = state => {
+  let valid = true
+  Object.values(state.errors).forEach(val => val.length > 0 && (valid = false))
+  return valid
+}
+
 class Main extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      fullName: null,
+      email: null,
+      message: null,
+      phone: null,
+      errors: {
+        fullName: 'Numele trebuie sa contina cel putin 5 caractere !',
+        email: 'Adresa email nu este valida !',
+        message: 'Mesajul trebuie sa contina cel putin 8 caractere !',
+        phone: 'Numarul de telefon trebuie sa contina cel putin 10 cifre !',
+      },
+    }
+  }
+
+  handleChange = event => {
+    event.preventDefault()
+    const { name, value } = event.target
+    let errors = this.state.errors
+
+    switch (name) {
+      case 'fullName':
+        errors.fullName =
+          value.length < 5
+            ? 'Numele trebuie sa contina cel putin 5 caractere !'
+            : ''
+        break
+      case 'email':
+        errors.email = validEmailRegex.test(value)
+          ? ''
+          : 'Adresa email nu este valida !'
+        break
+      case 'phone':
+        errors.phone =
+          value.length < 10 || isNaN(value)
+            ? 'Numarul de telefon trebuie sa contina cel putin 10 cifre !'
+            : ''
+        break
+      case 'message':
+        errors.message =
+          value.length < 8
+            ? 'Mesajul trebuie sa contina cel putin 8 caractere !'
+            : ''
+        break
+      default:
+        break
+    }
+
+    this.setState({ errors, [name]: value })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    if (validateForm(this.state)) {
+      console.info('Valid Form')
+    } else {
+      console.error('Invalid Form')
+    }
+  }
+
   render() {
+    const { errors } = this.state
+
     let close = (
       <div
         className="close"
@@ -140,25 +212,60 @@ class Main extends React.Component {
           style={{ display: 'none' }}
         >
           <h2 className="major">Contact</h2>
-          <form method="post" action="#">
+
+          <form onSubmit={this.handleSubmit} noValidate>
             <div className="field half first">
-              <label htmlFor="name">Nume</label>
-              <input type="text" name="name" id="name" required minLength="3" />
+              <label htmlFor="fullName">Nume</label>
+              <input
+                type="text"
+                name="fullName"
+                onChange={this.handleChange}
+                noValidate
+              />
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" required />
+              <input
+                type="email"
+                name="email"
+                onChange={this.handleChange}
+                noValidate
+              />
             </div>
+
+            <div className="field">
+              <label htmlFor="phone">Telefon: </label>
+              <input
+                name="phone"
+                type="text"
+                onChange={this.handleChange}
+                noValidate
+              />
+            </div>
+
             <div className="field">
               <label htmlFor="message">Mesaj</label>
               <textarea
                 name="message"
                 id="message"
                 rows="4"
-                required
-                minLength="8"
-              ></textarea>
+                onChange={this.handleChange}
+                noValidate
+              />
+              {errors.fullName.length > 0 && (
+                <p className="errors">{errors.fullName}</p>
+              )}
+              {errors.email.length > 0 && (
+                <p className="errors">{errors.email}</p>
+              )}
+              {errors.phone.length >= 0 && (
+                <p className="errors">{errors.phone}</p>
+              )}
+              {errors.message.length >= 0 && (
+                <p className="errors">{errors.message}</p>
+              )}
             </div>
+
             <ul className="actions">
               <li>
                 <input type="submit" value="Trimite" className="special" />
@@ -168,6 +275,7 @@ class Main extends React.Component {
               </li>
             </ul>
           </form>
+
           <ul className="icons">
             <li>
               <a
